@@ -39,7 +39,7 @@
         android:layout_width="190dp"
         android:layout_height="23dp"
         android:layout_marginTop="56dp"
-        android:text="CHILL HITS"
+        android:text="UPDATE CHILL HITS"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
