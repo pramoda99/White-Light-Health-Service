@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/drawable/custom_seekbar.xml" value="0.1" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/drawable/round_back_blue_10.xml" value="0.25833333333333336" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_allsettingsmain.xml" value="0.2490740740740741" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_cflash_cards_main.xml" value="0.1" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_cgmpdeco_room_main.xml" value="0.11574074074074074" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_cgmpsettings_main.xml" value="0.11574074074074074" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_cshow.xml" value="0.1" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_favourites_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_gchill_hits_main.xml" value="0.17647058823529413" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_gmusic.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_gmusic_adapter_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_gshow.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_listsettings.xml" value="0.2490740740740741" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_main.xml" value="0.11574074074074074" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_menu.xml" value="0.1" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_mpomodoro_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_pshow.xml" value="0.264" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/activity_todo_lists_main.xml" value="0.1" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/gitem.xml" value="0.23854166666666668" />
+        <entry key="..\:/SLIIT/Y2S2/MAD/Mini Project/MAD-Mini-Project/app/src/main/res/layout/pitem.xml" value="0.11574074074074074" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
+  </component>
+</project>
