@@ -2,12 +2,13 @@ package com.example.study_with_teddy;
 
 public class GModel {
 
-    String id, title;
+    String id, title, desc;
     public GModel(){}
 
-    public GModel(String id, String title){
+    public GModel(String id, String title, String desc){
         this.id= id;
         this.title= title;
+        this.desc= desc;
     }
 
     public String getId() {
@@ -26,4 +27,11 @@ public class GModel {
         this.title = title;
     }
 
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 }

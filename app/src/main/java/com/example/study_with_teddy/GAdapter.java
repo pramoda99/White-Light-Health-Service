@@ -21,6 +21,7 @@ public class GAdapter extends RecyclerView.Adapter<GAdapter.MyViewHolder> {
     //create variables from java classes
     private GShowActivity activity;
     private List<GModel> mList;
+
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     public GAdapter(GShowActivity activity , List<GModel> mList){//overloaded constructor
@@ -30,12 +31,12 @@ public class GAdapter extends RecyclerView.Adapter<GAdapter.MyViewHolder> {
 
     //update method
     public void updateData(int position){
-
         GModel item = mList.get(position);
         Bundle bundle = new Bundle();//pass data between activities
         bundle.putString("uId" , item.getId());
         bundle.putString("uTitle" , item.getTitle());
-        Intent intent = new Intent(activity , GFavouritesMain.class);
+        bundle.putString("uDesc" , item.getDesc());
+        Intent intent = new Intent(activity , GFlashCardsMain.class);
         intent.putExtras(bundle);//add extended data to intent
         activity.startActivity(intent);
     }
@@ -43,13 +44,13 @@ public class GAdapter extends RecyclerView.Adapter<GAdapter.MyViewHolder> {
     //delete method
     public void deleteData(int position){
         GModel item = mList.get(position);
-        db.collection("Favourites").document(item.getId()).delete()
+        db.collection("Flashcards").document(item.getId()).delete()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             notifyRemoved(position);
-                            Toast.makeText(activity, "Favourites Deleted !!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity, "Flashcard Deleted !!", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(activity, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -65,13 +66,14 @@ public class GAdapter extends RecyclerView.Adapter<GAdapter.MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(activity).inflate(R.layout.gitem, parent , false);
+        View v = LayoutInflater.from(activity).inflate(R.layout.citem , parent , false);
         return new MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.title.setText(mList.get(position).getTitle());
+        holder.desc.setText(mList.get(position).getDesc());
     }
 
     @Override
@@ -81,12 +83,12 @@ public class GAdapter extends RecyclerView.Adapter<GAdapter.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title ;
+        TextView title , desc;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.title_text);
-
+            desc = itemView.findViewById(R.id.desc_text);
         }
     }
 }

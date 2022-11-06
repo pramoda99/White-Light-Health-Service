@@ -43,7 +43,7 @@ public class Menu extends AppCompatActivity {
         chillHitsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Menu.this,GchillHitsMain.class));
+                startActivity(new Intent(Menu.this,GFlashCardsMain.class));
 
             }
         });

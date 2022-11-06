@@ -91,11 +91,11 @@ public class CFlashCardsMain extends AppCompatActivity {
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(CFlashCardsMain.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(CFlashCardsMain.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
 
     }
 
@@ -116,18 +116,15 @@ public class CFlashCardsMain extends AppCompatActivity {
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(CFlashCardsMain.this, "Failed !!", Toast.LENGTH_SHORT).show();
-                }
-            });
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(CFlashCardsMain.this, "Failed !!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
         }else
             Toast.makeText(this, "Empty Fields not Allowed", Toast.LENGTH_SHORT).show();
-    
-}
+
+    }
 
 }
-
-
-

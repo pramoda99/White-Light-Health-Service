@@ -9,6 +9,10 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.study_with_teddy.GAdapter;
+import com.example.study_with_teddy.GModel;
+import com.example.study_with_teddy.GTouchHelper;
+import com.example.study_with_teddy.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -29,15 +33,15 @@ public class GShowActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gshow);
+        setContentView(R.layout.activity_cshow);
 
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        db= FirebaseFirestore.getInstance();
+        db = FirebaseFirestore.getInstance();
         list = new ArrayList<>();
-        adapter = new GAdapter(this , list);
+        adapter = new GAdapter(this, list);
         recyclerView.setAdapter(adapter);
 
         ItemTouchHelper touchHelper = new ItemTouchHelper(new GTouchHelper(adapter));
@@ -46,41 +50,25 @@ public class GShowActivity extends AppCompatActivity {
     }
 
     //retrieve data
-    public void showData(){
+    public void showData() {
 
-        db.collection("Favourites").get()
+        db.collection("Flashcards").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         list.clear();
-                        for (DocumentSnapshot snapshot : task.getResult()){
+                        for (DocumentSnapshot snapshot : task.getResult()) {
 
-                            GModel model = new GModel(snapshot.getString("id") , snapshot.getString("title"));
+                            GModel model = new GModel(snapshot.getString("id"), snapshot.getString("title"), snapshot.getString("desc"));
                             list.add(model);
                         }
                         adapter.notifyDataSetChanged();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(GShowActivity.this, "Oops ... something went wrong", Toast.LENGTH_SHORT).show();
-            }
-        });
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(com.example.study_with_teddy.GShowActivity.this, "Oops ... something went wrong", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -18,20 +18,21 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class GFavouritesMain extends AppCompatActivity {
+public class GFlashCardsMain extends AppCompatActivity {
 
     //attributes
-    private EditText mTitle;
+    private EditText mTitle , mDesc;
     private Button mSaveBtn, mShowBtn;
     private FirebaseFirestore db;
-    private String uTitle, uId;
+    private String uTitle, uDesc , uId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favourites_main);
+        setContentView(R.layout.activity_cflash_cards_main);
 
         mTitle = findViewById(R.id.edit_title);
+        mDesc = findViewById(R.id.edit_desc);
         mSaveBtn = findViewById(R.id.save_btn);
         mShowBtn = findViewById(R.id.showall_btn);
 
@@ -42,15 +43,17 @@ public class GFavouritesMain extends AppCompatActivity {
             mSaveBtn.setText("Update");
             uTitle = bundle.getString("uTitle");
             uId = bundle.getString("uId");
+            uDesc = bundle.getString("uDesc");
             mTitle.setText(uTitle);
+            mDesc.setText(uDesc);
         }else{
             mSaveBtn.setText("Save");
         }
 
-        mShowBtn.setOnClickListener(new View.OnClickListener() {//navigate to GShowActivity
+        mShowBtn.setOnClickListener(new View.OnClickListener() {//navigate to CShowActivity
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(GFavouritesMain.this , GShowActivity.class));
+                startActivity(new Intent(GFlashCardsMain.this , GShowActivity.class));
             }
         });
 
@@ -60,67 +63,68 @@ public class GFavouritesMain extends AppCompatActivity {
             public void onClick(View v) {
 
                 String title = mTitle.getText().toString();
+                String desc = mDesc.getText().toString();
 
                 Bundle bundle1 = getIntent().getExtras();
                 if (bundle1 !=null){
                     String id = uId;
-                    updateToFireStore(id , title);
+                    updateToFireStore(id , title, desc);
                 }else{
                     String id = UUID.randomUUID().toString();
-                    saveToFireStore(id , title);
+                    saveToFireStore(id , title , desc);
                 }
 
             }
         });
     }
 
-    private void updateToFireStore(String id , String title){//update data
+    private void updateToFireStore(String id , String title , String desc){//update data
 
-        db.collection("Favourites").document(id).update("title" , title )
+        db.collection("Flashcards").document(id).update("title" , title , "desc" , desc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(GFavouritesMain.this, "Favourites Updated!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(GFlashCardsMain.this, "Flashcard Updated!!", Toast.LENGTH_SHORT).show();
                         }else{
-                            Toast.makeText(GFavouritesMain.this, "Error : " + task.getException().getMessage() , Toast.LENGTH_SHORT).show();
+                            Toast.makeText(GFlashCardsMain.this, "Error : " + task.getException().getMessage() , Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(GFavouritesMain.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(GFlashCardsMain.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
 
     }
 
-    private void saveToFireStore(String id , String title){//insert data
+    private void saveToFireStore(String id , String title , String desc){//insert data
 
-        if (!title.isEmpty()){
+        if (!title.isEmpty() && !desc.isEmpty()){
             HashMap<String , Object> map = new HashMap<>();//to map identifying values, known as keys
             map.put("id" , id);
             map.put("title" , title);
+            map.put("desc" , desc);
 
-
-            db.collection("Favourites").document(id).set(map)
+            db.collection("Flashcards").document(id).set(map)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(GFavouritesMain.this, "Favourites Saved Successfully !!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(GFlashCardsMain.this, "Flashcard Saved Successfully !!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(GFavouritesMain.this, "Failed !!", Toast.LENGTH_SHORT).show();
-                }
-            });
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(GFlashCardsMain.this, "Failed !!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
         }else
             Toast.makeText(this, "Empty Fields not Allowed", Toast.LENGTH_SHORT).show();
+
     }
+
 }
-
-
