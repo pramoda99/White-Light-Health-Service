@@ -21,12 +21,7 @@
         <activity android:name=".ZpomodoroMain" />
         <activity android:name=".ZShowActivity" />
         <activity android:name=".ZTimmer" />
-        <activity android:name=".GchillHitsMain" />
-        <activity android:name=".GFavouritesMain" />
         <activity android:name=".GShowActivity" />
-        <activity
-            android:name=".GMusicPlayer"
-            android:exported="true"/>
 
         <activity android:name=".PTodoListsMain" />
         <activity android:name=".PShowActivity" />
