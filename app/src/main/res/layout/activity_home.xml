@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/room"
     tools:context=".HomeActivity">
-
     <Button
         android:id="@+id/get_started"
         android:layout_width="250dp"
