@@ -29,7 +29,7 @@ public class GFlashCardsMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cflash_cards_main);
+        setContentView(R.layout.activity_add_article_main);
 
         mTitle = findViewById(R.id.edit_title);
         mDesc = findViewById(R.id.edit_desc);
@@ -128,3 +128,4 @@ public class GFlashCardsMain extends AppCompatActivity {
     }
 
 }
+
