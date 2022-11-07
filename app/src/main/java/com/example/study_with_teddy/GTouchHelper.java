@@ -6,9 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.study_with_teddy.GAdapter;
-import com.example.study_with_teddy.R;
-
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
 public class GTouchHelper extends ItemTouchHelper.SimpleCallback {

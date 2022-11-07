@@ -19,17 +19,17 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GShowActivity extends AppCompatActivity {
+public class GReadShowActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private FirebaseFirestore db;
-    private GAdapter adapter;
+    private GReadAdapter adapter;
     private List<GModel> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cshow);
+        setContentView(R.layout.activity_g_read_article_main);
 
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
@@ -37,11 +37,10 @@ public class GShowActivity extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
         list = new ArrayList<>();
-        adapter = new GAdapter(this, list);
+        adapter = new GReadAdapter(this, list);
         recyclerView.setAdapter(adapter);
 
-        ItemTouchHelper touchHelper = new ItemTouchHelper(new GTouchHelper(adapter));
-        touchHelper.attachToRecyclerView(recyclerView);
+
         showData();
     }
 
@@ -63,7 +62,7 @@ public class GShowActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(GShowActivity.this, "Oops ... something went wrong", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(GReadShowActivity.this, "Oops ... something went wrong", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

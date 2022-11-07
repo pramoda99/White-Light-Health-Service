@@ -50,7 +50,7 @@ public class Menu extends AppCompatActivity {
         pomodoroBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Menu.this, ZpomodoroMain.class));
+                startActivity(new Intent(Menu.this, GReadShowActivity.class));
 
             }
         });

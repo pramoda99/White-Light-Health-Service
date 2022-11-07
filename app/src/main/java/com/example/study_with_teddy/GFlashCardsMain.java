@@ -50,7 +50,7 @@ public class GFlashCardsMain extends AppCompatActivity {
             mSaveBtn.setText("Save");
         }
 
-        mShowBtn.setOnClickListener(new View.OnClickListener() {//navigate to CShowActivity
+        mShowBtn.setOnClickListener(new View.OnClickListener() {//navigate to GShowActivity
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(GFlashCardsMain.this , GShowActivity.class));
@@ -128,4 +128,3 @@ public class GFlashCardsMain extends AppCompatActivity {
     }
 
 }
-

@@ -17,8 +17,8 @@
 
 
     <string name="textView">ARTICLES</string>
-    <string name="save_btn">ADD SET</string>
-    <string name="showall_btn">SHOW ALL FLASH CARDS</string>
+    <string name="save_btn">PUBLISH</string>
+    <string name="showall_btn">SHOW ALL ARTICLES</string>
 
     <string name="textViewP">Today What I am Going to Do?</string>
     <string name="textViewP2">To Do List</string>

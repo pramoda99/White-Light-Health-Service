@@ -22,10 +22,11 @@
         <activity android:name=".ZShowActivity" />
         <activity android:name=".ZTimmer" />
         <activity android:name=".GShowActivity" />
-
+        <activity android:name=".GReadShowActivity" />
         <activity android:name=".PTodoListsMain" />
         <activity android:name=".PShowActivity" />
         <activity android:name=".CFlashCardsMain" />
+        <activity android:name=".GFlashCardsMain" />
         <activity android:name=".CShowActivity" />
         <activity android:name=".Menu" />
         <activity android:name=".HomeActivity" />
