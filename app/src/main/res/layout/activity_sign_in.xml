@@ -24,15 +24,9 @@ tools:context=".SignIn">
     android:layout_marginBottom="1dp"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/login_applogo"
-        android:layout_width="406dp"
-        android:layout_height="242dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/logo" />
     <Space
         android:layout_width="match_parent"
-        android:layout_height="22dp" />
+        android:layout_height="283dp" />
 
     <TextView
         android:id="@+id/signin"
@@ -45,6 +39,7 @@ tools:context=".SignIn">
         android:textAlignment="center"
         android:textColor="@color/haloBlue"
         android:textSize="38sp" />
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="22dp" />

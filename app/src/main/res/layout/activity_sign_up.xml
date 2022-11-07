@@ -24,11 +24,11 @@ tools:context=".SignUp">
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="150dp" />
+        android:layout_height="305dp" />
 
     <TextView
         android:id="@+id/hello"
-        android:layout_width="380dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
         android:gravity="center_horizontal"
