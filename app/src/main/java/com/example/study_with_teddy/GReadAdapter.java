@@ -38,6 +38,7 @@ public class GReadAdapter extends RecyclerView.Adapter<com.example.study_with_te
         bundle.putString("uTitle" , item.getTitle());
         bundle.putString("uDesc" , item.getDesc());
         bundle.putString("uAuthor" , item.getAuthor());
+        bundle.putString("uDate" , item.getDate());
         Intent intent = new Intent(activity , GFlashCardsMain.class);
         intent.putExtras(bundle);//add extended data to intent
         activity.startActivity(intent);
@@ -77,6 +78,7 @@ public class GReadAdapter extends RecyclerView.Adapter<com.example.study_with_te
         holder.title.setText(mList.get(position).getTitle());
         holder.desc.setText(mList.get(position).getDesc());
         holder.author.setText(mList.get(position).getAuthor());
+        holder.date.setText(mList.get(position).getDate());
     }
 
     @Override
@@ -86,13 +88,14 @@ public class GReadAdapter extends RecyclerView.Adapter<com.example.study_with_te
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title , desc, author;
+        TextView title , desc, author, date;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.title_text);
             desc = itemView.findViewById(R.id.desc_text);
             author = itemView.findViewById(R.id.author_text);
+            date = itemView.findViewById(R.id.date_text);
         }
     }
 }

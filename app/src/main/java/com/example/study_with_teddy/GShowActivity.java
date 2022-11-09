@@ -55,7 +55,7 @@ public class GShowActivity extends AppCompatActivity {
                         list.clear();
                         for (DocumentSnapshot snapshot : task.getResult()) {
 
-                            GModel model = new GModel(snapshot.getString("id"), snapshot.getString("title"), snapshot.getString("desc"), snapshot.getString("author"));
+                            GModel model = new GModel(snapshot.getString("id"), snapshot.getString("title"), snapshot.getString("desc"), snapshot.getString("author"), snapshot.getString("date"));
                             list.add(model);
                         }
                         adapter.notifyDataSetChanged();

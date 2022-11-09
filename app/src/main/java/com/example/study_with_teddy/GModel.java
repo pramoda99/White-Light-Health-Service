@@ -2,14 +2,19 @@ package com.example.study_with_teddy;
 
 public class GModel {
 
-    String id, title, desc, author;
+    String id;
+    String title;
+    String desc;
+    String author;
+    String date;
     public GModel(){}
 
-    public GModel(String id, String title, String desc, String author){
+    public GModel(String id, String title, String desc, String author, String date){
         this.id= id;
         this.title= title;
         this.desc= desc;
         this.author= author;
+        this.date= date;
     }
 
     public String getId() {
@@ -41,5 +46,11 @@ public class GModel {
     }
     public void setAuthor(String author) {
         this.author = author;
+    }
+    public String getDate() {
+        return date;
+    }
+    public void setDate(String date) {
+        this.date = date;
     }
 }
