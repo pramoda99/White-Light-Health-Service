@@ -36,6 +36,7 @@ public class GAdapter extends RecyclerView.Adapter<GAdapter.MyViewHolder> {
         bundle.putString("uId" , item.getId());
         bundle.putString("uTitle" , item.getTitle());
         bundle.putString("uDesc" , item.getDesc());
+        bundle.putString("uAuthor" , item.getAuthor());
         Intent intent = new Intent(activity , GFlashCardsMain.class);
         intent.putExtras(bundle);//add extended data to intent
         activity.startActivity(intent);
@@ -50,7 +51,7 @@ public class GAdapter extends RecyclerView.Adapter<GAdapter.MyViewHolder> {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             notifyRemoved(position);
-                            Toast.makeText(activity, "Flashcard Deleted !!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity, "Article Removed !!", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(activity, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -66,7 +67,7 @@ public class GAdapter extends RecyclerView.Adapter<GAdapter.MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(activity).inflate(R.layout.citem , parent , false);
+        View v = LayoutInflater.from(activity).inflate(R.layout.gartitem , parent , false);
         return new MyViewHolder(v);
     }
 
@@ -74,6 +75,7 @@ public class GAdapter extends RecyclerView.Adapter<GAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.title.setText(mList.get(position).getTitle());
         holder.desc.setText(mList.get(position).getDesc());
+        holder.author.setText(mList.get(position).getAuthor());
     }
 
     @Override
@@ -83,12 +85,13 @@ public class GAdapter extends RecyclerView.Adapter<GAdapter.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title , desc;
+        TextView title , desc, author;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.title_text);
             desc = itemView.findViewById(R.id.desc_text);
+            author = itemView.findViewById(R.id.author_text);
         }
     }
 }

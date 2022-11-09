@@ -4,53 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
              android:layout_height="match_parent"
-    android:background="@drawable/wallpapernew"
+    android:background="@drawable/wall"
     tools:context=".CShowActivity">
 
 
-
-
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recyclerview"
-    android:layout_width="409dp"
-    android:layout_height="650dp"
-    android:background="#E8FFFFFF"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.363"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textViewP2" />
-
-<TextView
-    android:id="@+id/textViewP2"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:background="#F4F6F6"
-    android:fontFamily="monospace"
-    android:gravity="center"
-    android:text="@string/textView"
-    android:textAlignment="center"
-    android:textColorLink="#0E0C0C"
-    android:textSize="20sp"
-    android:textStyle="bold"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.043" />
-
-    <Button
-        android:id="@+id/showall_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="47dp"
-        android:text="@string/showall_btn"
-        android:textColor="#000"
-        app:backgroundTint="@color/green"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="402dp"
+        android:layout_height="661dp"
+        android:background="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewP2" />
+
+    <TextView
+        android:id="@+id/textViewP2"
+        android:layout_width="406dp"
+        android:layout_height="32dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="Article Feed"
+        android:textAlignment="center"
+        android:textColor="@color/lightB"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

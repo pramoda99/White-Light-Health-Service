@@ -14,6 +14,7 @@
 
     <string name="title_text">Title</string>
     <string name="desc_text">Description</string>
+    <string name="author_text">Author</string>
 
 
     <string name="textView">ARTICLES</string>
@@ -22,8 +23,6 @@
 
     <string name="textViewP">Today What I am Going to Do?</string>
     <string name="textViewP2">To Do List</string>
-
-
 
 
 

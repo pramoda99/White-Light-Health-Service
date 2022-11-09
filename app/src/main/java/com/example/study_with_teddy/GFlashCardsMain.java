@@ -1,5 +1,6 @@
 package com.example.study_with_teddy;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,11 +22,12 @@ import java.util.UUID;
 public class GFlashCardsMain extends AppCompatActivity {
 
     //attributes
-    private EditText mTitle , mDesc;
+    private EditText mTitle , mDesc, mAuthor;
     private Button mSaveBtn, mShowBtn;
     private FirebaseFirestore db;
-    private String uTitle, uDesc , uId;
+    private String uTitle, uDesc , uId, uAuthor;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,7 @@ public class GFlashCardsMain extends AppCompatActivity {
 
         mTitle = findViewById(R.id.edit_title);
         mDesc = findViewById(R.id.edit_desc);
+        mAuthor = findViewById(R.id.edit_title2);
         mSaveBtn = findViewById(R.id.save_btn);
         mShowBtn = findViewById(R.id.showall_btn);
 
@@ -44,8 +47,10 @@ public class GFlashCardsMain extends AppCompatActivity {
             uTitle = bundle.getString("uTitle");
             uId = bundle.getString("uId");
             uDesc = bundle.getString("uDesc");
+            uAuthor = bundle.getString("uAuthor");
             mTitle.setText(uTitle);
             mDesc.setText(uDesc);
+            mAuthor.setText( uAuthor);
         }else{
             mSaveBtn.setText("Save");
         }
@@ -64,28 +69,29 @@ public class GFlashCardsMain extends AppCompatActivity {
 
                 String title = mTitle.getText().toString();
                 String desc = mDesc.getText().toString();
+                String author = mAuthor.getText().toString();
 
                 Bundle bundle1 = getIntent().getExtras();
                 if (bundle1 !=null){
                     String id = uId;
-                    updateToFireStore(id , title, desc);
+                    updateToFireStore(id , title, desc, author);
                 }else{
                     String id = UUID.randomUUID().toString();
-                    saveToFireStore(id , title , desc);
+                    saveToFireStore(id , title , desc, author);
                 }
 
             }
         });
     }
 
-    private void updateToFireStore(String id , String title , String desc){//update data
+    private void updateToFireStore(String id , String title , String desc, String author){//update data
 
-        db.collection("Flashcards").document(id).update("title" , title , "desc" , desc)
+        db.collection("Flashcards").document(id).update("title" , title , "desc" , desc, "author", author)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(GFlashCardsMain.this, "Flashcard Updated!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(GFlashCardsMain.this, "Article Updated!!", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(GFlashCardsMain.this, "Error : " + task.getException().getMessage() , Toast.LENGTH_SHORT).show();
                         }
@@ -99,20 +105,21 @@ public class GFlashCardsMain extends AppCompatActivity {
 
     }
 
-    private void saveToFireStore(String id , String title , String desc){//insert data
+    private void saveToFireStore(String id , String title , String desc, String author){//insert data
 
-        if (!title.isEmpty() && !desc.isEmpty()){
+        if (!title.isEmpty() && !desc.isEmpty() && !author.isEmpty()){
             HashMap<String , Object> map = new HashMap<>();//to map identifying values, known as keys
             map.put("id" , id);
             map.put("title" , title);
             map.put("desc" , desc);
+            map.put("author" , author);
 
             db.collection("Flashcards").document(id).set(map)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(GFlashCardsMain.this, "Flashcard Saved Successfully !!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(GFlashCardsMain.this, "Article Published Successfully !!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {

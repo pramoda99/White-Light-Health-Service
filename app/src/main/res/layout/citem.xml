@@ -16,20 +16,21 @@
             android:id="@+id/title_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="monospace"
             android:padding="8dp"
             android:text="@string/title_text"
             android:textColor="#000"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/desc_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="145dp"
             android:padding="8dp"
             android:text="@string/desc_text"
             android:textColor="#000"
             android:textSize="18sp" />
-
 
 
 

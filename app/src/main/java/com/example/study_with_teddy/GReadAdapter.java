@@ -37,6 +37,7 @@ public class GReadAdapter extends RecyclerView.Adapter<com.example.study_with_te
         bundle.putString("uId" , item.getId());
         bundle.putString("uTitle" , item.getTitle());
         bundle.putString("uDesc" , item.getDesc());
+        bundle.putString("uAuthor" , item.getAuthor());
         Intent intent = new Intent(activity , GFlashCardsMain.class);
         intent.putExtras(bundle);//add extended data to intent
         activity.startActivity(intent);
@@ -67,7 +68,7 @@ public class GReadAdapter extends RecyclerView.Adapter<com.example.study_with_te
     @NonNull
     @Override
     public com.example.study_with_teddy.GAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(activity).inflate(R.layout.citem , parent , false);
+        View v = LayoutInflater.from(activity).inflate(R.layout.gartitem , parent , false);
         return new com.example.study_with_teddy.GAdapter.MyViewHolder(v);
     }
 
@@ -75,6 +76,7 @@ public class GReadAdapter extends RecyclerView.Adapter<com.example.study_with_te
     public void onBindViewHolder(@NonNull com.example.study_with_teddy.GAdapter.MyViewHolder holder, int position) {
         holder.title.setText(mList.get(position).getTitle());
         holder.desc.setText(mList.get(position).getDesc());
+        holder.author.setText(mList.get(position).getAuthor());
     }
 
     @Override
@@ -84,12 +86,13 @@ public class GReadAdapter extends RecyclerView.Adapter<com.example.study_with_te
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title , desc;
+        TextView title , desc, author;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.title_text);
             desc = itemView.findViewById(R.id.desc_text);
+            author = itemView.findViewById(R.id.author_text);
         }
     }
 }

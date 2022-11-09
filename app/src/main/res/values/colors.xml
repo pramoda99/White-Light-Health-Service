@@ -19,4 +19,8 @@
     <color name ="lightred">#F44336</color>
     <color name = "lightgreennew">#8BC34A</color>
     <color name="newyellow">#FFEB3B</color>
-    </resources>
+    <color name="lightB">#02218F</color>
+    <color name="Button_Bl">#3A6DFD</color>
+    <color name="But_Bl">#055FC9</color>
+    <color name="bck">#B27594F3</color>
+</resources>

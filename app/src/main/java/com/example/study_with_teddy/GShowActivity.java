@@ -29,7 +29,7 @@ public class GShowActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cshow);
+        setContentView(R.layout.activity_g_read_article_main);
 
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
@@ -55,7 +55,7 @@ public class GShowActivity extends AppCompatActivity {
                         list.clear();
                         for (DocumentSnapshot snapshot : task.getResult()) {
 
-                            GModel model = new GModel(snapshot.getString("id"), snapshot.getString("title"), snapshot.getString("desc"));
+                            GModel model = new GModel(snapshot.getString("id"), snapshot.getString("title"), snapshot.getString("desc"), snapshot.getString("author"));
                             list.add(model);
                         }
                         adapter.notifyDataSetChanged();
