@@ -1,34 +1,27 @@
 package com.example.study_with_teddy;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-
-import android.app.DatePickerDialog;
-
-
-import android.widget.DatePicker;
-
-
-import java.text.DateFormat;
-import java.util.Calendar;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDialogFragment;
-import androidx.fragment.app.DialogFragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -106,8 +99,9 @@ public class GFlashCardsMain extends AppCompatActivity implements DatePickerDial
                     String id = UUID.randomUUID().toString();
                     saveToFireStore(id , title , desc, author, date);
                 }
-
+                startActivity(new Intent(GFlashCardsMain.this , GShowActivity.class));
             }
+
         });
     }
 
