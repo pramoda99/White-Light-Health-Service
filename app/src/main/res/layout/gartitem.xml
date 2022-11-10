@@ -7,49 +7,58 @@ app:cardElevation="8dp"
 android:background="@drawable/menuwallpaper"
 android:layout_margin="13dp">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@color/cuteblue">
-
-    <TextView
-        android:id="@+id/title_text"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="monospace"
-        android:padding="8dp"
-        android:text="@string/title_text"
-        android:textColor="#000"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:background="@color/hm"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/desc_text"
-        android:layout_width="match_parent"
-        android:layout_height="145dp"
-        android:padding="8dp"
-        android:text="@string/desc_text"
-        android:textColor="#000"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:padding="8dp"
+            android:text="@string/title_text"
+            android:textColor="#000"
+            android:textSize="21sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/author_text"
-        android:layout_width="366dp"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:text="Author"
-        android:textSize="16sp" />
+        <TextView
+            android:id="@+id/desc_text"
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:padding="8dp"
+            android:text="@string/desc_text"
+            android:textColor="#000"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/date_text"
-        android:layout_width="336dp"
-        android:layout_height="47dp"
-        android:padding="8dp"
-        android:text="Date" />
+        <View
+            android:id="@+id/divider"
+            android:layout_width="195dp"
+            android:layout_height="4dp"
+            android:background="@drawable/ic_baseline_linear_scale_24" />
+
+        <TextView
+            android:id="@+id/author_text"
+            android:layout_width="366dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Author"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="336dp"
+            android:layout_height="47dp"
+            android:padding="8dp"
+            android:text="Date"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
 
 
-</LinearLayout>
+    </LinearLayout>
 
 
 </androidx.cardview.widget.CardView>
