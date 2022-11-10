@@ -47,7 +47,7 @@ public class PAdapter extends RecyclerView.Adapter<PAdapter.MyViewHolder> {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             notifyRemoved(position);
-                            Toast.makeText(activity, "Task Deleted !!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity, "Note Removed !!", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(activity, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

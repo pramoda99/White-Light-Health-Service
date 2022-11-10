@@ -11,14 +11,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="To Do List"
-        android:textSize="24sp"
-        android:textColor="#000"
-        android:padding="8dp"
-        android:id="@+id/title_text"/>
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="match_parent"
+            android:layout_height="99dp"
+            android:background="#BEE4F6"
+            android:padding="8dp"
+            android:text="To Do List"
+            android:textColor="#000"
+            android:textSize="24sp" />
 
 
     </LinearLayout>
