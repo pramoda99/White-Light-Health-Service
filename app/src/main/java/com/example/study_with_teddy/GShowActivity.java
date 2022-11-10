@@ -48,7 +48,7 @@ public class GShowActivity extends AppCompatActivity {
     //retrieve data
     public void showData() {
 
-        db.collection("Flashcards").get()
+        db.collection("Articles").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {

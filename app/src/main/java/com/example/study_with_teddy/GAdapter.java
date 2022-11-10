@@ -46,7 +46,7 @@ public class GAdapter extends RecyclerView.Adapter<GAdapter.MyViewHolder> {
     //delete method
     public void deleteData(int position){
         GModel item = mList.get(position);
-        db.collection("Flashcards").document(item.getId()).delete()
+        db.collection("Articles").document(item.getId()).delete()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

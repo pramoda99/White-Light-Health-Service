@@ -119,7 +119,7 @@ public class GFlashCardsMain extends AppCompatActivity implements DatePickerDial
 
     private void updateToFireStore(String id , String title , String desc, String author, String date){//update data
 
-        db.collection("Flashcards").document(id).update("title" , title , "desc" , desc, "author", author, "date", date)
+        db.collection("Articles").document(id).update("title" , title , "desc" , desc, "author", author, "date", date)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -148,7 +148,7 @@ public class GFlashCardsMain extends AppCompatActivity implements DatePickerDial
             map.put("author" , author);
             map.put("date" , date);
 
-            db.collection("Flashcards").document(id).set(map)
+            db.collection("Articles").document(id).set(map)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
