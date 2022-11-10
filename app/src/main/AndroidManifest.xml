@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.study_with_teddy">
+    package="com.example.white_light">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -15,30 +15,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Study_with_teddy">
 
-        <activity android:name=".AlarmActivity" />
+        <activity android:name="com.example.white_light.AlarmActivity" />
 
-        <activity android:name=".BMI_activity" />
-        <activity android:name=".BMIMainActivity" />
-        <activity android:name=".SplashScreen" />
-        <activity android:name=".ALLsettingsMain" />
-        <activity android:name=".listSettings" />
-        <activity android:name=".AllPdecoRoomMain" />
-        <activity android:name=".ZpomodoroMain" />
-        <activity android:name=".ZShowActivity" />
-        <activity android:name=".ZTimmer" />
-        <activity android:name=".GShowActivity" />
-        <activity android:name=".CShowActivity" />
-        <activity android:name=".GReadShowActivity" />
-        <activity android:name=".PTodoListsMain" />
-        <activity android:name=".PShowActivity" />
-        <activity android:name=".CFlashCardsMain" />
-        <activity android:name=".GFlashCardsMain" />
+        <activity android:name="com.example.white_light.BMI_activity" />
+        <activity android:name="com.example.white_light.BMIMainActivity" />
+        <activity android:name="com.example.white_light.SplashScreen" />
+        <activity android:name="com.example.white_light.ALLsettingsMain" />
+        <activity android:name="com.example.white_light.listSettings" />
+        <activity android:name="com.example.white_light.AllPdecoRoomMain" />
+        <activity android:name="com.example.white_light.ZpomodoroMain" />
+        <activity android:name="com.example.white_light.ZShowActivity" />
+        <activity android:name="com.example.white_light.ZTimmer" />
+        <activity android:name="com.example.white_light.GShowActivity" />
+        <activity android:name="com.example.white_light.CShowActivity" />
+        <activity android:name="com.example.white_light.GReadShowActivity" />
+        <activity android:name="com.example.white_light.PTodoListsMain" />
+        <activity android:name="com.example.white_light.PShowActivity" />
+        <activity android:name="com.example.white_light.CFlashCardsMain" />
+        <activity android:name="com.example.white_light.GFlashCardsMain" />
 
-        <activity android:name=".Menu" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".SignUp" />
-        <activity android:name=".SignIn" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.white_light.Menu" />
+        <activity android:name="com.example.white_light.HomeActivity" />
+        <activity android:name="com.example.white_light.SignUp" />
+        <activity android:name="com.example.white_light.SignIn" />
+        <activity android:name="com.example.white_light.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,7 +46,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".AlertReceiver" />
+        <receiver android:name="com.example.white_light.AlertReceiver" />
 
     </application>
 
