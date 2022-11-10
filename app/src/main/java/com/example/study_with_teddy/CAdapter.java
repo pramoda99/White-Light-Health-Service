@@ -34,8 +34,9 @@ public class CAdapter extends RecyclerView.Adapter<CAdapter.MyViewHolder> {
         CModel item = mList.get(position);
         Bundle bundle = new Bundle();//pass data between activities
         bundle.putString("uId" , item.getId());
-        bundle.putString("uTitle" , item.getTitle());
-        bundle.putString("uDesc" , item.getDesc());
+        bundle.putString("uAge" , item.getAge());
+        bundle.putString("uHeight" , item.getHeight());
+        bundle.putString("uWeight" , item.getWeight());
         Intent intent = new Intent(activity , CFlashCardsMain.class);
         intent.putExtras(bundle);//add extended data to intent
         activity.startActivity(intent);
@@ -44,13 +45,13 @@ public class CAdapter extends RecyclerView.Adapter<CAdapter.MyViewHolder> {
     //delete method
     public void deleteData(int position){
         CModel item = mList.get(position);
-        db.collection("Flashcards").document(item.getId()).delete()
+        db.collection("BMI").document(item.getId()).delete()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             notifyRemoved(position);
-                            Toast.makeText(activity, "Flashcard Deleted !!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity, "Details Removed !!", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(activity, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -72,8 +73,9 @@ public class CAdapter extends RecyclerView.Adapter<CAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.title.setText(mList.get(position).getTitle());
-        holder.desc.setText(mList.get(position).getDesc());
+        holder.age.setText(mList.get(position).getAge());
+        holder.height.setText(mList.get(position).getHeight());
+        holder.weight.setText(mList.get(position).getWeight());
     }
 
     @Override
@@ -83,12 +85,13 @@ public class CAdapter extends RecyclerView.Adapter<CAdapter.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title , desc;
+        TextView age , height, weight;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            title = itemView.findViewById(R.id.title_text);
-            desc = itemView.findViewById(R.id.desc_text);
+            age = itemView.findViewById(R.id.edit_age);
+            height = itemView.findViewById(R.id.edit_height);
+            weight = itemView.findViewById(R.id.edit_weight);
         }
     }
 }

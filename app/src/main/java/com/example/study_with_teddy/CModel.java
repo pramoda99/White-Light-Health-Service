@@ -2,13 +2,14 @@ package com.example.study_with_teddy;
 
 public class CModel {
 
-    String id, title, desc;
+    String id, age, height, weight;
     public CModel(){}
 
-    public CModel(String id, String title, String desc){
+    public CModel(String id, String age, String height, String weight){
         this.id= id;
-        this.title= title;
-        this.desc= desc;
+        this.age= age;
+        this.height= height;
+        this.weight= weight;
     }
 
     public String getId() {
@@ -19,19 +20,27 @@ public class CModel {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getAge() {
+        return age;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setAge(String age) {
+        this.age = age;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getHeight() {
+        return height;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.study_with_teddy;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,18 +22,20 @@ import java.util.UUID;
 public class CFlashCardsMain extends AppCompatActivity {
 
     //attributes
-    private EditText mTitle , mDesc;
+    private EditText mAge,mHeight,mWeight;
     private Button mSaveBtn, mShowBtn;
     private FirebaseFirestore db;
-    private String uTitle, uDesc , uId;
+    private String uAge, uHeight, uWeight , uId;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cflash_cards_main);
 
-        mTitle = findViewById(R.id.edit_title);
-        mDesc = findViewById(R.id.edit_desc);
+        mAge = findViewById(R.id.edit_age);
+        mHeight = findViewById(R.id.edit_height);
+        mWeight = findViewById(R.id.edit_weight);
         mSaveBtn = findViewById(R.id.save_btn);
         mShowBtn = findViewById(R.id.showall_btn);
 
@@ -41,16 +44,18 @@ public class CFlashCardsMain extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();//pass data between activities
         if (bundle != null){
             mSaveBtn.setText("Update");
-            uTitle = bundle.getString("uTitle");
+            uAge = bundle.getString("uAge");
             uId = bundle.getString("uId");
-            uDesc = bundle.getString("uDesc");
-            mTitle.setText(uTitle);
-            mDesc.setText(uDesc);
+            uHeight = bundle.getString("uHeight");
+            uWeight = bundle.getString("uWeight");
+            mAge.setText(uAge);
+            mHeight.setText(uHeight);
+            mWeight. setText(uWeight);
         }else{
             mSaveBtn.setText("Save");
         }
 
-        mShowBtn.setOnClickListener(new View.OnClickListener() {//navigate to CShowActivity
+        mShowBtn.setOnClickListener(new View.OnClickListener() {//navigate to BMIShowActivity
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CFlashCardsMain.this , CShowActivity.class));
@@ -62,30 +67,31 @@ public class CFlashCardsMain extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String title = mTitle.getText().toString();
-                String desc = mDesc.getText().toString();
+                String age = mAge.getText().toString();
+                String height = mHeight.getText().toString();
+                String weight = mWeight.getText().toString();
 
                 Bundle bundle1 = getIntent().getExtras();
                 if (bundle1 !=null){
                     String id = uId;
-                    updateToFireStore(id , title, desc);
+                    updateToFireStore(id , age, height,weight );
                 }else{
                     String id = UUID.randomUUID().toString();
-                    saveToFireStore(id , title , desc);
+                    saveToFireStore(id ,  age, height,weight);
                 }
 
             }
         });
     }
 
-    private void updateToFireStore(String id , String title , String desc){//update data
+    private void updateToFireStore(String id, String age, String height, String weight){//update data
 
-        db.collection("Flashcards").document(id).update("title" , title , "desc" , desc)
+        db.collection("BMI").document(id).update("age" , age , "height" , height, "weight", weight)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(CFlashCardsMain.this, "Flashcard Updated!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CFlashCardsMain.this, "Details Updated!!", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(CFlashCardsMain.this, "Error : " + task.getException().getMessage() , Toast.LENGTH_SHORT).show();
                         }
@@ -99,20 +105,21 @@ public class CFlashCardsMain extends AppCompatActivity {
 
     }
 
-    private void saveToFireStore(String id , String title , String desc){//insert data
+    private void saveToFireStore(String id, String age, String height, String weight){//insert data
 
-        if (!title.isEmpty() && !desc.isEmpty()){
+        if (!age.isEmpty() && !height.isEmpty()){
             HashMap<String , Object> map = new HashMap<>();//to map identifying values, known as keys
             map.put("id" , id);
-            map.put("title" , title);
-            map.put("desc" , desc);
+            map.put("age" , age);
+            map.put("height" , height);
+            map.put("weight" , weight);
 
-            db.collection("Flashcards").document(id).set(map)
+            db.collection("BMI").document(id).set(map)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(CFlashCardsMain.this, "Flashcard Saved Successfully !!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(CFlashCardsMain.this, "Details Saved Successfully !!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {

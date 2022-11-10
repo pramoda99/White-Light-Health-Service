@@ -25,7 +25,7 @@
         android:background="#F4F6F6"
         android:fontFamily="monospace"
         android:gravity="center"
-        android:text="@string/textView"
+        android:text="@string/bmi_summarry"
         android:textAlignment="center"
         android:textColorLink="#0E0C0C"
         android:textSize="20sp"

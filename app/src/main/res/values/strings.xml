@@ -23,7 +23,12 @@
 
     <string name="textViewP">Today What I am Going to Do?</string>
     <string name="textViewP2">To Do List</string>
-
+    <string name="upgrade_your">Upgrade Your,</string>
+    <string name="add_details">Add New Details</string>
+    <string name="weight_text">Weight</string>
+    <string name="height_text">Height</string>
+    <string name="age_text">Age</string>
+    <string name="bmi_summarry">BMI Summarry</string>
 
 
 </resources>
