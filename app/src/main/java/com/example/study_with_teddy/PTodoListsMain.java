@@ -80,7 +80,7 @@ public class PTodoListsMain extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(PTodoListsMain.this, "Task Updated!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PTodoListsMain.this, "Note Updated!!", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(PTodoListsMain.this, "Error : " + task.getException().getMessage() , Toast.LENGTH_SHORT).show();
                         }
@@ -107,7 +107,7 @@ public class PTodoListsMain extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(PTodoListsMain.this, "Task Saved Successfully!!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(PTodoListsMain.this, "Note Saved Successfully!!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {
