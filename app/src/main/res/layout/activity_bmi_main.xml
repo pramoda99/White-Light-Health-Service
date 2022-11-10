@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1e1d1d"
+    android:background="@drawable/wall"
     tools:context=".MainActivity">
 
     <RelativeLayout
@@ -25,7 +25,7 @@
         android:layout_width="130dp"
         android:layout_height="140dp"
         android:layout_toLeftOf="@id/centerHorizontalLine"
-        android:background="@drawable/malefemalenotfocus"
+        android:background="@drawable/buttons"
         android:layout_above="@id/heightLayout"
         android:layout_marginBottom="30dp"
         android:focusable="true"
@@ -66,7 +66,7 @@
         android:layout_marginLeft="18dp"
         android:layout_above="@id/heightLayout"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/malefemalenotfocus">
+        android:background="@drawable/buttons">
 
         <ImageView
             android:layout_width="150px"
@@ -102,7 +102,7 @@
         android:layout_marginRight="18dp"
         android:layout_below="@id/heightLayout"
         android:layout_marginTop="60dp"
-        android:background="@drawable/height_background">
+        android:background="@drawable/buttons">
 
         <TextView
             android:id="@+id/weightText"
@@ -176,7 +176,7 @@
         android:layout_marginLeft="18dp"
         android:layout_below="@id/heightLayout"
         android:layout_marginTop="60dp"
-        android:background="@drawable/height_background">
+        android:background="@drawable/buttons">
 
         <TextView
             android:id="@+id/ageText"
@@ -248,7 +248,7 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="-10dp"
-        android:background="@drawable/height_background">
+        android:background="@drawable/buttons">
 
 
 
@@ -308,8 +308,8 @@
         android:id="@+id/calculateBMI"
         android:layout_alignParentBottom="true"
         android:textSize="18sp"
-        android:background="@drawable/buttonbackground"
-        android:text="Calculate Your BMI---"
+        android:background="@drawable/height_background"
+        android:text="Calculate Your BMI"
         android:textColor="#BFFFFFFF"
         android:textStyle="bold"
         android:layout_margin="15dp"/>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1e1d1d"
+    android:background="@drawable/wall"
     tools:context=".BMI_activity">
 
     <TextView
@@ -33,7 +33,7 @@
         android:layout_marginTop="25dp"
         android:id="@+id/contentLayout"
         android:layout_below="@id/imageViewOk"
-        android:background="@drawable/malefemalenotfocus">
+        android:background="@drawable/buttons">
 
 
         <TextView
@@ -75,13 +75,13 @@
 
     <android.widget.Button
         android:id="@+id/recalculateBMI"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_width="369dp"
+        android:layout_height="87dp"
         android:layout_below="@id/contentLayout"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/buttons"
+        android:background="@drawable/height_background"
         android:text="Recalculate Your BMI"
         android:textColor="#BFFFFFFF"
         android:textSize="18sp"

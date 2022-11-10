@@ -64,7 +64,7 @@ public class Menu extends AppCompatActivity {
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Menu.this, AlarmActivity.class));
+                startActivity(new Intent(Menu.this, ZpomodoroMain.class));
 
             }
         });

@@ -72,8 +72,8 @@ public class BMIMainActivity extends AppCompatActivity {
         male.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                male.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.malefemalefocus));
-                female.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.malefemalenotfocus));
+                male.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.height_background));
+                female.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.buttons));
                 typeOfUser = "Male";
 
 
@@ -83,8 +83,8 @@ public class BMIMainActivity extends AppCompatActivity {
         female.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                female.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.malefemalefocus));
-                male.setBackground(ContextCompat.getDrawable(getApplicationContext(),R.drawable.malefemalenotfocus));
+                female.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.height_background));
+                male.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.buttons));
                 typeOfUser = "Female";
 
 

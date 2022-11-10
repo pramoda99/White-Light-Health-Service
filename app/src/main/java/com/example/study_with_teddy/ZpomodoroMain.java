@@ -42,7 +42,7 @@ public class ZpomodoroMain extends AppCompatActivity {
         Timmer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ZpomodoroMain.this, ZTimmer.class));
+                startActivity(new Intent(ZpomodoroMain.this, AlarmActivity.class));
 
             }
         });
