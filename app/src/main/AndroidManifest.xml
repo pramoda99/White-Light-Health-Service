@@ -16,6 +16,7 @@
         android:theme="@style/Theme.Study_with_teddy">
 
         <activity android:name=".AlarmActivity" />
+
         <activity android:name=".BMI_activity" />
         <activity android:name=".BMIMainActivity" />
         <activity android:name=".SplashScreen" />

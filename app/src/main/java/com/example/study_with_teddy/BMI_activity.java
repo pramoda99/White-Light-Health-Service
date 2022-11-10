@@ -27,7 +27,7 @@ import android.widget.TextView;
 
 public class BMI_activity extends AppCompatActivity {
     android.widget.Button recalculateBMI;
-
+    android.widget.Button button2;
     TextView displayBMI, genderDisplay, statusDisplay;
     Intent intent;
     ImageView mimageview;
@@ -43,7 +43,15 @@ public class BMI_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
+        button2 = findViewById(R.id.button2);
 
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BMI_activity.this,CFlashCardsMain.class));
+
+            }
+        });
 
         //getSupportActionBar().setElevation(0);
         //getSupportActionBar().setTitle(Html.fromHtml("<font color = \"white\"></font>"));
@@ -108,5 +116,6 @@ public class BMI_activity extends AppCompatActivity {
                 finish();
             }
         });
+
     }
 }
