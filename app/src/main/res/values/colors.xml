@@ -23,4 +23,8 @@
     <color name="Button_Bl">#3A6DFD</color>
     <color name="But_Bl">#055FC9</color>
     <color name="bck">#B27594F3</color>
+    <color name="blur">#BDBEBE</color>
+    <color name="backg">#DAE2E6</color>
+    <color name="fine">#959AC4</color>
+    <color name="hm">#C4DCE2</color>
 </resources>
