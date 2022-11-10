@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +16,9 @@
         android:theme="@style/Theme.Study_with_teddy">
 
         <activity android:name=".AlarmActivity" />
-
+        <activity android:name=".BMI_activity" />
+        <activity android:name=".BMIMainActivity" />
+        <activity android:name=".SplashScreen" />
         <activity android:name=".ALLsettingsMain" />
         <activity android:name=".listSettings" />
         <activity android:name=".AllPdecoRoomMain" />
