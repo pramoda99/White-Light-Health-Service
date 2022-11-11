@@ -10,7 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/search_view_bg">
 
 
         <TextView
@@ -21,7 +22,7 @@
             android:padding="8dp"
             android:text="@string/age_text"
             android:textColor="#000"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
         <TextView
@@ -32,7 +33,7 @@
             android:padding="8dp"
             android:text="@string/height_text"
             android:textColor="#000"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
         <TextView
@@ -43,7 +44,7 @@
             android:padding="8dp"
             android:text="Weight"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
     </LinearLayout>

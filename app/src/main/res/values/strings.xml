@@ -28,7 +28,7 @@
     <string name="weight_text">Weight</string>
     <string name="height_text">Height</string>
     <string name="age_text">Age</string>
-    <string name="bmi_summarry">BMI Summarry</string>
+    <string name="bmi_summarry">BMI Summary</string>
 
 
 </resources>

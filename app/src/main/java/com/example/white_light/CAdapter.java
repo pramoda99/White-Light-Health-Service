@@ -76,6 +76,7 @@ public class CAdapter extends RecyclerView.Adapter<CAdapter.MyViewHolder> {
         holder.age.setText(mList.get(position).getAge());
         holder.height.setText(mList.get(position).getHeight());
         holder.weight.setText(mList.get(position).getWeight());
+
     }
 
     @Override
@@ -85,13 +86,14 @@ public class CAdapter extends RecyclerView.Adapter<CAdapter.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView age , height, weight;
+        TextView age, height, weight;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            age = itemView.findViewById(R.id.edit_age);
-            height = itemView.findViewById(R.id.edit_height);
-            weight = itemView.findViewById(R.id.edit_weight);
+            age = itemView.findViewById(R.id.age_text);
+            height = itemView.findViewById(R.id.height_text);
+            weight = itemView.findViewById(R.id.weight_text);
+
         }
     }
 }

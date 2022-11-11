@@ -35,9 +35,9 @@ public class CShowActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        db= FirebaseFirestore.getInstance();
+        db = FirebaseFirestore.getInstance();
         list = new ArrayList<>();
-        adapter = new CAdapter(this , list);
+        adapter = new CAdapter(this, list);
         recyclerView.setAdapter(adapter);
 
         ItemTouchHelper touchHelper = new ItemTouchHelper(new CTouchHelper(adapter));
@@ -46,16 +46,16 @@ public class CShowActivity extends AppCompatActivity {
     }
 
     //retrieve data
-    public void showData(){
+    public void showData() {
 
         db.collection("BMI").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         list.clear();
-                        for (DocumentSnapshot snapshot : task.getResult()){
+                        for (DocumentSnapshot snapshot : task.getResult()) {
 
-                            CModel model = new CModel(snapshot.getString("id") , snapshot.getString("age"), snapshot.getString("height"), snapshot.getString("weight"));
+                            CModel model = new CModel(snapshot.getString("id"), snapshot.getString("age"), snapshot.getString("height"), snapshot.getString("weight"));
                             list.add(model);
                         }
                         adapter.notifyDataSetChanged();
@@ -68,8 +68,3 @@ public class CShowActivity extends AppCompatActivity {
                 });
     }
 }
-
-
-
-
-
