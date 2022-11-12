@@ -24,6 +24,17 @@ public class SignUp extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sign_up);
+
+        mEmail = findViewById(R.id.email_reg);
+        mPass = findViewById(R.id.password_reg);
+        signUpBtn = findViewById(R.id.signup_btn);
+
+        mAuth = FirebaseAuth.getInstance();//firebase authentication
+
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
