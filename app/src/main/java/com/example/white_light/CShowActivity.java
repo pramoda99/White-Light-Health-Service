@@ -31,6 +31,14 @@ public class CShowActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cshow);
 
+        recyclerView = findViewById(R.id.recyclerview);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        db = FirebaseFirestore.getInstance();
+        list = new ArrayList<>();
+        adapter = new CAdapter(this, list);
+        recyclerView.setAdapter(adapter);
 
         ItemTouchHelper touchHelper = new ItemTouchHelper(new CTouchHelper(adapter));
         touchHelper.attachToRecyclerView(recyclerView);
