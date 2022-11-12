@@ -20,7 +20,10 @@ import java.util.UUID;
 
 public class PTodoListsMain extends AppCompatActivity {
     //attributes
-   
+    private EditText mTitle;
+    private Button mSaveBtn, mShowBtn;
+    private FirebaseFirestore db;
+    private String uTitle, uId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
