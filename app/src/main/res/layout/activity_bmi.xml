@@ -6,16 +6,7 @@
     android:background="@drawable/wall"
     tools:context=".BMI_activity">
 
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Result"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"/>
-
+  
 
     <ImageView
         android:id="@+id/imageViewOk"
