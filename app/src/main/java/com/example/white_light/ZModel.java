@@ -5,15 +5,7 @@ public class ZModel {
     String id, title,desc;
     public ZModel(){}
 
-    public ZModel(String id, String title, String desc){
-        this.id=id;
-        this.title=title;
-        this.desc=desc;
-    }
-
-    public String getId() {
-        return id;
-    }
+   
 
     public void setId(String id) {
         this.id = id;
